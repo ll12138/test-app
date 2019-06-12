@@ -10,7 +10,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -32,11 +31,11 @@ public class LogAspect {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(LogAspect.class);
 
-	@Autowired
+	//@Autowired
 	//private CommonLogService commonLogService;
 
 	// 定义controller切入点拦截规则，拦截SystemControllerLog注解的方法
-	@Pointcut("@annotation(com.huaweisoft.common.annotation.ControllerLog)")
+	@Pointcut("@annotation(com.huawesoft.lil1.annotation.ControllerLog)")
 	public void controllerAspect() {
 		
 	}
