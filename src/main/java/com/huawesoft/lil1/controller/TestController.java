@@ -1,4 +1,4 @@
-package com.huawesoft.lil1.Controller;
+package com.huawesoft.lil1.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +9,7 @@ import com.huawesoft.lil1.common.JsonResult;
 /**
  * @author lil1
  * @date 2019年6月12日 上午9:54:36
- * @Description 
+ * @Description
  */
 @RestController
 public class TestController {
