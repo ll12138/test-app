@@ -1,0 +1,122 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>test-app</artifactId>
+  <groupId>com.huawesoft.lil1</groupId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- 继承父包 -->
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-parent</artifactId>
+     <version>1.5.8.RELEASE</version>
+  </parent>
+  
+  <dependencies>
+  
+  	<!-- spring-boot的web启动的jar包 -->
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+     	<artifactId>spring-boot-starter-web</artifactId>
+  	</dependency>
+    
+    <!-- aop -->
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+     	<artifactId>spring-boot-starter-aop</artifactId>
+  	</dependency>
+    
+    <!-- test -->
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+    </dependency>
+    
+  	<!-- 热部署 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+    </dependency>    
+    
+    <!--mysql驱动-->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+    </dependency>  
+    
+    <!-- FTP -->
+     <dependency>
+        <groupId>commons-net</groupId>
+        <artifactId>commons-net</artifactId>
+        <version>3.6</version>
+    </dependency> 
+    
+    <!-- freemarker -->
+    <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+        </dependency>
+    
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.8</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.11</version>
+    </dependency>
+  
+  </dependencies>
+  
+  <!-- Maven插件 -->
+  <build>
+  	
+  	<plugins>
+        
+        <plugin>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+         
+         <!-- mybatis generator 自动生成代码插件 -->
+         <plugin>
+             <groupId>org.mybatis.generator</groupId>
+             <artifactId>mybatis-generator-maven-plugin</artifactId>
+             <version>1.3.2</version>
+             <configuration>
+                 <configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+                 <!-- 是否覆盖，true表示会替换生成的JAVA文件，false则不覆盖 -->
+                 <overwrite>true</overwrite>
+                 <!--允许移动生成的文件-->
+                 <verbose>true</verbose>
+             </configuration>
+         </plugin>
+        
+    </plugins>
+    
+    <!-- 配置java版本 不配置的话默认父类配置的是1.6-->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.8</source>   <!-- 源代码使用的JDK版本 --> 
+            <target>1.8</target>   <!-- 需要生成的目标class文件的编译版本 -->  
+            <encoding>UTF-8</encoding> <!-- 字符集编码 -->
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  	
+  </build>
+  
+</project>

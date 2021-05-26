@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    <title>test-app</title>
+</head>
+<body>
+<input type="hidden" id="TenantId" name="TenantId" value=""/>
+
+<!--</div>-->
+<div class="loginWraper bodyImage">
+    <div class="header2"><img class="header2" src="../images/loginLog.png" /></div>
+
+    <div id="loginform" class="loginBox formBackground">
+        <h2>用户登录</h2>
+        <div class="login_user">
+            <span></span>
+            <input type="text" placeholder="用户名" name="account" id="account" />
+        </div>
+        <div class="login_password">
+        <input type="password" placeholder="密码" name="password" id="password" />
+        </div>
+       <div class="loginBtnDiv">
+           <!--<button class="login_btn" onclick="user_login()">登&nbsp;录</button>-->
+           <input id="login" type="button" class="login_btn"
+                  value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;" onclick="user_login();"/>
+       </div>
+
+
+       
+    </div>
+    <div class="footer footer2">Copyright</div>
+</div>
+
+
+</body>
+</html>
