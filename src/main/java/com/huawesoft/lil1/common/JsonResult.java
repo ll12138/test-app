@@ -1,6 +1,7 @@
 package com.huawesoft.lil1.common;
 
-import org.assertj.core.util.Strings;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 用于封装RESTful调用返回结果
@@ -76,7 +77,7 @@ public class JsonResult {
    * 请求失败消息
    */
   public static JsonResult fail(String msg) {
-    return new JsonResult(-2, null, Strings.isNullOrEmpty(msg) ? "" : msg);
+    return new JsonResult(-2, null, StringUtils.isAllBlank(msg) ? "" : msg);
   }
 
  /**

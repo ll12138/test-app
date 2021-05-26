@@ -1,0 +1,17 @@
+server:
+  port: 8089
+
+spring:
+  # MySQL 配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/test?allowMultiQueries=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: dLFMLw3FBrvW8A9zjY6hWtPTH1ctPEdLq0arwn3bSY/EesQoRJWQZN4/5/E/5oBt1xGvPac3C0aRgAnNBKQ/uQ==
+      # encrypt config
+      filters: config
+      connect-properties:
+        config.decrypt: true
+        config.decrypt.key: ${spring.datasource.druid.publickey}
